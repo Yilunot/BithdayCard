@@ -15,6 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.bithdaycard.ui.theme.BithdayCardTheme
 
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +26,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    BirthdayGreetingWithText(message= "Happy Birthday To Me!!", from = "from Tony")
+                    BirthdayGreetingWithText(message= "Happy Birthday To Me!!", from = "- from Tony")
                 }
             }
         }
@@ -33,17 +34,22 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
+// function that display in UI.
 fun BirthdayGreetingWithText(message: String, from: String){
+    //column will put them in different level. Row will but them side by side.
     Column{
+        //sp controls the size of the font.
         Text(text = message, fontSize = 36.sp)
-        Text(text = from, fontSize = 36.sp)
+        Text(text = from, fontSize = 40.sp)
     }
 }
 
+
+//preview of the function
 @Preview(showBackground = true)
 @Composable
 fun BirthdayGreetingWithTextPreview(){
     BithdayCardTheme {
-        BirthdayGreetingWithText(message= "Happy Birthday To Me!!", from = "from Tony")
+        BirthdayGreetingWithText(message= "Happy Birthday To Me!!", from = "- from Tony")
     }
 }
